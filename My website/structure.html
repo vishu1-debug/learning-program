@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <title>Structure os c program</title>
+        <script src="headerjs.js"></script>
+         <style>
+            .space
+            {
+                text-indent:40px
+            }
+        </style>
+        <style>        
+            table {
+            font-family: arial;
+            width: 100%;    
+            }
+
+            td, th {
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="Full">
+        <header id="header"></header>
+        <h1><u><center>Structure of C-Program</center></u></h1>
+        <ul>
+            <li>Document/Comment section</li>
+            <li>Link section/Header file inclusion section</li>
+            <li>Definition/Macro definition section</li>
+            <li>Global variable definition section</li>
+            <li>Function main()</li>
+            <li>User define function</li>
+        </ul>
+        <b>Document/Comment section</b>
+        <p style="margin-left:40px;">This section is used to mack a program more meaningful understandable and readable. This section is not processed/executed by 'c' compiler, it only shows a meaningful message.In software development ,it is good practic to place a documentation 
+        /comment section. Documentation/comment section is benificial in creation of new software as well as maintainance of existing software. 
+         In 'c' comments are specified between (/*) slashstric and stricslase(*/).
+        </p>
+        <pre style="margin-left:40px;"><b>Syntax:-</b> /*message*/</pre>
+        <b>Example:-</b>
+        <ol>
+            <li>/*program to display a message*/</li>
+            <li>/*prog to print the sum and product of two nos*/</li>
+        </ol> 
+        <b>Note:-</b>
+        <ol><li>In c, comment can be used for single as well as multiline.</li>
+            <li>In c, comments can't be nested. It means, a comment cannot be placed within another comment.</li>
+        </ol>
+        <b>Example:-</b>
+        <p  class="space">[/* prog to print the /* sum of two nos */ as well as product*/]->Error.</p>
+        <h1><b><center><u>Header file include section</u></center></b></h1>
+        <b>Header file:-</b>A file having extension .h is called header file. A header file contains the prototype of function, while function are stored in C-library in the form of object file. A prototype is one line informtion regarding function.
+        <p><b>There are several built in header file in C. They are as follows:-</b></p>
+        <ul>
+            <li>stdio.h (Standard input output)</li>
+            <li>conio.h (console input output)</li>
+            <li>mayh.h</li>
+            <li>ctype.h (character type)</li>
+            <li>string.h</li>
+            <li>stdio.h (standard library)</li>
+            <li>dos.h</li>
+            <li>process.h</li>
+            <li>graphics.h</li>
+        </ul>
+        <table >
+            <tr>
+                <th>stdio.h</th>
+                <th>conio.h</th>
+                <th>ctybe.h</th>
+                <th>string.h</th>   
+                <th>stdio.h</th>
+                <th>math.h</th>
+            </tr>
+            <tr>
+                <td>printf()</td>
+                <td>clscr()</td>
+                <td>isalpha()</td>
+                <td>strcpy()</td>
+                <td>malloc</td>
+                <td>sqrt()</td>
+            </tr>
+            <tr>
+                <td>gets()</td>
+                <td>gotoxy()</td>
+                <td>isupper</td>
+                <td>strcmp()</td>
+                <td>realloc()</td>
+                <td>abs()</td>
+            </tr>
+            <tr>
+                <td>puts</td>
+                <td>______</td>
+                <td>islower</td>
+                <td>strcat()</td>
+                <td>free()</td>
+                <td>pow()</td>
+            </tr>
+            <tr>
+                <td>scanf()</td>
+                <td>getch()</td>
+                <td>isdigit()</td>
+                <td>strlen()</td>
+                <td>calloc()</td>
+                <td>sin()</td>
+            </tr>
+            <tr>
+                <td>getc()</td>
+                <td>- - - </td>
+                <td>isalnum</td>
+                <td>- - -</td>
+                <td>- - -</td>
+                <td>cos()</td>
+            </tr>
+        </table>        
+        <b class="space"> Syntex to add/attach/include header file our program:-</b>
+        <p class="space"> In c, a prepracessor directive called #include is used to attach/include header file in our program.</p>
+        <pre style="margin-left:40px;"><b>Syntax:-</b>  #include< Headerfile name >=For built in header file.</pre>    <b><center>or</center></b> 
+        <pre class="space">#include"header file name"<= For user defined header file.</pre>
+        <b>Example:-</b>
+        <ol>
+            <li>#include < math.h ></li>
+            <li>#include < string.h ></li>
+            <li>#include < conio.h ></li>
+        </ol>
+       <b>function main() section:-</b>
+       <p class="space">It is a user define function that is considered as entry point for any c program. main() is the first line form where a c program begins its execution. Each program of c contains ony one main().</p>
+       <b>Syntex:-</b>
+       <div class="program">
+       <pre><ol>
+            <li>
+                main()
+                {
+                - - - - - - -
+                _ _ _ _ _ _ _
+                }
+            </li>
+            <li>
+                void main()
+                {
+                _ _ _ _ _ _
+                _ _ _ _ _ _ 
+                }
+            </li>
+            <li>
+            int main()
+            {
+            _ _ _ _ _ _ _
+            _ _ _ _ _ _ _ 
+            }
+            </li>
+       </ol></pre>
+       </div>
+       <b>Body of main():-</b>
+       <ol type="i">
+            <li>Declaration section</li>
+            <li>Value assign section</li>
+            <li>Calculation section</li>
+            <li>Print result section</li>
+       </ol>
+        <ol type="i">
+            <li><b>Declaraction section:-</b> In c, everything must be declared before used in this section, variable, array, pointer, function etc, is declared. Declaration section informs the compiler about specified thihgs and that thing can be used in program after declaration.</li>
+            <b>syntex to declare a variable:-</b>
+                  <pre>
+                    datatype variable name;
+                            <b>'or'</b>
+                    datatype v1,v2,v3,_ _ _ _ _,vn;
+            <b>Example:-</b>
+                    <b>int</b> x;
+                    <b>int</b> y;
+                    <b>int</b> z;
+                        <b>'or'</b>
+                    <b>int</b> x,y,z;
+                 <ul>   
+                <li>x,y,z are variable of type int.</li>
+                 <b>'or'</b>
+                <li>x,y,z are integer variable.</li>
+                </ul>
+            <b>Example:-</b>
+                    <b>float</b> m; -> m is float variable or, m is variable of type float.
+            <b>Example:-</b>
+                    'A'=> char r;
+            <b>Example:-</b>
+                    double s,t;
+                    
+ <b>Note:-</b>Declaration section must be terminated/ended with semicolon(;) and multiple variable in declaration section are separated with comma(,).
+                </pre>
+                <ul>
+                    <li><b>variable:-</b> It is a memory location name wher we store some valuse.</li>
+                    <li><b>Datatype:-</b> The type/form of data is called datatype.</li>
+                </ul>
+                <b>There are following categary of datatype in c:-</b>
+                <ol type="a">
+                    <li><b>Built-in/fundamentel/intrinsic/primitive</b>=>already in c.</li>
+                    <li><b>derive</b>=>made using built-in.</li>
+                    <li><b>User defined</b>=>created by user.</li>
+                </ol>
+            
+       </ol>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,198 @@
+<html>
+    <title>APPLET</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="headerjs.js"></script>
+    <body>
+        <div class="Full">
+        <header id="header"></header>
+        <h1>Applet</h1>
+
+        <p>Applet are small special kind of java programs that run within a web document/web-page.They are accessed an internet server and transported over the network.<br>An applet is a small program which is embedded in an HTML page that can be automatically downloaded form web server and run in any java enabled lorows or hot java lorowser of java.Applet are automatically installed and run as a part of HTML document.</p>
+        <ol>
+            <b>The current use of applet includes following :-</b>
+            <li>Animated graphics</li>
+            <li>Video games</li>
+            <li>On-line test</li>
+            <li>Databases, Reports,etc</li>
+        </ol>
+        <b>Difference between Java applet and Java Application :-</b>
+        <table style="width:50%">
+            <tr>
+                <th>Java Applet</th>
+                <th>Java Application</th>
+            </tr>
+            <tr>
+                <td>
+                <ol>
+                    <li>java Applet are used for creating dynamic and inteactive web application.</li>
+                    <li>Applets are embedded within web page/HTML page and run under the control of browser.
+                    </li>
+                    <li>Applet application has no main() method.</li>
+                    <li>Java Applet is only compiled. it is not executed by interpreter, because it has no main() method. It is only executed by browser.</li>
+                    <li>Java Applet does not use the library of other language such as C and C++.</li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li>Java applecation are used to write comma cialapplication.</li>
+                        <li>Java application runs stand-alone with support of java virtual machine(JVM).</li>
+                        <li>Java application support main() method.</li>
+                        <li>Since, java application has main method, so it is both compiled as well as interpreted.</li>
+                        <li>Java application has facility to use the library of other languages.</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <b>Types of Applet :-</b>
+        <ol>
+            <b>There are basically two types of applet :-</b>
+            <li>Local Applet</li>
+            <li>Remote Applet</li>
+        </ol>
+        <ol>
+            <li><b>Local Applet --></b>The applet which resides on local computer and also executer on same computer is called local applet.</li>
+            <li><b>Remote Applet --></b>The applet which resides on remote computer such as web-server and executed on that computer is calleed remote applet.</li>
+        </ol>
+        <b>Creating user-define applet :-</b>
+        <p>In java, auser define applet is a class which is derived from a by=uilt in class. Applet and overides the method of Applet class.</p>
+        <p>The Applet class hierarchy in java is as following :-</p>
+        <b>Applet Lifecycle :-</b>
+        <p>There are following stages in lifecycle of applet :-
+        <ol>
+            <li>Initialieation state</li>
+            <li>Running state</li>
+            <li>Blocked state</li>
+            <li>Display state</li>
+            <li>Dead state</li>
+        </ol>
+        <ol>
+            <li><b>Initialisation state :-</b>In this state, the applet is first loaded into the memory. It means initialisation state comes only once in applet lifecycle.
+            <p>In this state, the public void init() method is automatically triggered/ invoked call.</p></li>
+            <pre><b>Syntex :- public void init()
+            {
+                _ _ _ _ _ _ _ _
+                _ _ _ _ _ _ _ _
+            }
+            </b></pre>
+            <li><b>Running state :-</b>After initialisation, the applet enters into running state. This state shows that an applet is executing it work.<p>In this state, the public void start method is automatically invoked.</p></li>
+            <pre><b>Syntex :-public void start()
+            {
+                _ _ _ _ _ _ _ _ 
+                _ _ _ _ _ _ _ _ 
+            }
+            </b></pre>
+            <li><b>Blocked state :-</b>In this state, applet stops its own work temporarily.
+            <p>In this state, the public void stop() method is automatically invoked.</p></li>
+            <pre><b>Syntex :- public void stop()
+            {
+                _ _ _ _ _ _ _
+                _ _ _ _ _ _ _
+            }
+            </b></pre>
+            <li><b>Display state :-</b>It is a past of running state. This state shows that the applet is displaying somthing on the web page.
+            <p>In this state, the public void paint() method is automatically invoked.</p></li>
+            <pre><b>Syntex :-public void paint(Graphics g)
+            {
+                _ _ _ _ _ _ _ _
+                _ _ _ _ _ _ _ _ 
+            }
+            </b></pre>
+            <li><b>Dead state :-</b>It happened only once in a applet lifecycle. It has come when either the applet has completed its work, or we exit form the browser or closing the web page.<p>In this state, the public void destroy method is automatically invoked.</p></li>
+            <pre><b>Syntex :-Public void destroy()
+            {
+                _ _ _ _ _ _ _  _ _
+                _ _ _ _ _ _ _ _  _ 
+            }
+            </b></pre>
+        </ol>
+        <ol>
+            <li>Write a program to explain of applet to display a message and also write HTML code to execute applet.</li>
+            <div class="program">
+            <pre>
+         //Example of applet
+        import java.applet.*; 
+        import java.awt.*;
+        public class MessageApplet extends Applet
+        {
+            public void paint(Graphics g)
+            {
+                g.drawString("Welcome to applet",150,200);
+            }
+        }
+            </pre>
+            </div>
+            <b>NOTE :-</b>
+            <ol>
+                <li>Applet tag of HTML is used to hold as well as to execute applet of java.</li>
+                <b>Syntex for applet tag is as follows :-</b>
+                <pre>applet code=" "width=" "Height=" "</pre>
+                <li>drawString() is a non-static function method of Graphics class which is used to display text/string on applet screen window.</li>
+                <b>Syntex :-</b>graphics-object.drowString(msg,x,y);
+                <b>Example :-g.drowString("Hello",500,300);</b>
+                <li>appletviewer command/tool of java developer kit(JDK) is used to execute HTML file which holds applet code.</li>
+            </ol>
+            <li><b>Write a program to explain the example of different state of applet.</b>/</li>
+            <div class="program">
+            <pre>
+            //Example of different state of applet
+            import java.applet.*;
+            import java.awt.*;
+            public class Happy extends Applet
+            {
+                String s;
+                public void start()
+                {
+                    s+="Durga";
+                }
+                public void init()
+                {
+                    s="Happy";
+                }
+                public void paint(Graphics g)
+                {
+                    s+="Puja";
+                    g.drawString(s,150,200);
+                }
+            }
+            <p>
+                    <applet code="Happy" width="300" Height="400"></applet>
+            </p>
+            </pre>
+            </div>
+            <li><b>
+                Write a program to print the sum of two numbers using lifecycle.
+                </b>
+            </li>
+            <div class="program">
+            <pre>
+             //prog to print the sum of two numbers
+            import java.applet.*;
+            import java.awt.*;
+            public class Sum extends Applet
+            {
+                int x,y,s;
+                public void init()
+                {
+                    x=15;
+                    y=45;
+                }
+                public void start()
+                {
+                    s=x+y;
+                }
+                public void paint(Graphics g)
+                {
+                    g.drawString(String.valueOf(s),150,200);
+                }
+            }
+                    <applet code="Sum" width="300" Height="400"></applet>
+            </pre>
+        </div>
+        </ol>
+        <b>Passing Parameter to java Applet form HTML page</b>
+        <p>
+            <b>Syntex :-</b><pre><param Name="  " value="  "></pre>
+        </p>
+    </div>
+    </body>
+    </html>

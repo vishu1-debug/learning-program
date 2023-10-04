@@ -1,0 +1,327 @@
+<html>
+    <title>Multi-threading</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="headerjs.js"></script>
+    <body>
+        <header id="header"></header>
+        <div class="Full">
+        <h1><center>MULTI-THREADING</center></h1>
+        <p>The process of creating as well as execut more than one threads simultaneasly/parallely/concurrently is called multi-thread. Multi-threading allows multiple task to excute concurrently within a single program. By using multi-threading,we can create programs showing animation, playing music,display document and download environment simultaneously.
+        </p>
+        <p>In multi-threading concept the main important element to achieve multi-threading is termed/called athread. Athread is a light weighted process in java, it is specified as a class.</p>
+        <p>The advantage of multi-threaded program is that, it utilises system resources(Like CPU,Memory,input/output devices etc.) better because other thread can grab the CPU time when one thread execution is blocked. A typical program of java is executed swquentially and is said to be a single thread program. If single thread program execution is blocked while wating for input/output operation, then no other process of program execution is processed.</p>
+        <p>In java, we can create multiple threads that may or may not share memory. The switching between thread are automatically cassied out by <b>JVM(Java Virtual Machine)</b>.
+            When a standalone application is run, a thread is automatically created to execute <b>main() function</b>. This thread is called main thread. The program terminates when the main thread finishes execution and all other thread called child thread are spawned with/form the main thread.</p>
+        <p>Unlike C and C++, java provides facility for multi-threading. It means,java is a Object oriented programming language that provides facility to crate tread and process them.</p>
+        <b>In java, there are two ways to create a thread :-</b>
+        <ol>
+            <li>using Thread class</li>
+            <li>using Runable interface</li>
+        </ol>
+        <ol>
+            <li><b>using Thread class :-</b>
+                In java, the first way to create a thread by dereving/inheriting a class form Thread class and over-riding method <b>run()</b> of Thread class.Thread class is specifier in <b>java.lang</b> package. As we know in java, a user defined thread is a user-defined class.</li>
+            <ul><li>
+                    <b>Write a program to explain the example of multi-threaded using Thread class.</b>
+                <div class="program">
+                    <pre>
+         //prog to explain the example of multithread using Thread class
+        class Vishu extends Thread
+        {
+            public void run()
+            {
+                for(int i=1;i<=5;++i)
+                {
+                    System.out.println("I is"+i);
+                }
+            }
+        }
+        class Mno extends Thread
+        {
+            public void run()
+            {
+                for(int j=1;j<=5;++j)
+                {
+                    System.out.println("J is "+j);
+                }
+            }
+        }
+        class Pqr extends Thread
+        {
+            public void run()
+            {
+                for(int k=1;k<=5;++k)
+                {
+                    System.out.println("K is"+k);
+                }
+            }
+        }
+        class Multi_thread
+        {
+            public static void main(String args[])
+            {
+                Vishu v=new Vishu();
+                Mno m=new Mno();
+                Pqr p=new Pqr();
+                v.start();
+                m.start();
+                p.start();
+            }
+        }
+        </pre>
+    </div>
+        </li></ul>
+            <b>NOTE :-</b>start() function is used to start/initialise thread. It means, this function switches the control to <b>run() method</b>.
+            <li>
+                <p><b>using Runnable interface :-  </b>It is the secound way to create a thread in java. In this way a class implemens utilises Runable interface, and used the method <b>run()</b> of Runable interface.</p>
+                <p>
+                    In this method/way a thread is invoked/called using the object of Thread class, and the object of user defined thread class is passed as argument in Thread class constructor. It means, start() function is invoked/call with object of Thread class, and the object of user defined thread is passed as argument of Thread class constructor.
+                </p></li>
+                <ul><li><b>Write a program to explain the example of multi-threading using Runnable interface</b>
+      <div class="program">
+                    <pre>
+      //prog to explain the example of multi-thread using Runnable interface.
+        class Kumar implements Runnable
+        {
+            public void run()
+            {
+                for(int i=1;i<=5;++i)
+                {
+                    System.out.println("I is"+i);
+                }
+            }
+        }
+        class Xyz implements Runnable
+        {
+            public void run()
+            {
+                for(int j=1;j<=5;++j)
+                {
+                    System.out.println("J is"+j);
+                }
+            }
+        }
+        class Vishuu implements Runnable
+        {
+            public void run()
+            {
+                for(int k=1;k<=5;++k)
+                {
+                    System.out.println("K is"+k);
+                }
+            }
+        }
+        class RunableInterface
+        {
+            public static void main(String vishu[])
+            {
+                Kumar k=new Kumar();
+                Xyz v=new Xyz();
+                Vishuu vv=new Vishuu();
+                Thread t1=new Thread(k);
+                Thread t2=new Thread(v);
+                Thread t3=new Thread(vv);
+                t1.start();
+                t2.start();
+                t3.start();
+            }
+        }
+        </pre>
+    </div>
+                    </li>
+            </ul>
+        </ol>
+        <b>Life Cycle of Thread :-</b>The stages/states form the creation of thread to tramination of thread is called the life cycle of thread.
+        <p>There are following states/stages are considered in life cycle of thread.</p>
+        <ol>
+            <li>new born</li>
+            <li>runnable</li>
+            <li>running</li>
+            <li>blocked</li>
+            <li>dead/terminate</li>
+            <ol>
+                <li><b>new :-</b> A process/thread is considered in new state when process creates/borns.</li>
+                <li><b>runnable :-</b> A process/thread is considered it runnable state when it is not selected by thread schedular.</li>
+                <li><b>running :-</b> A thread is considered in running state when it is selected by thread schedular. In this state, thread is executing.</li>
+                <li><b>blocked :-</b> A thread is considered in blocked state when a thread performs an input/output operation.</li>
+                <li><b>terminate :-</b> A thread is considered in terminate/dead state when a thread completes its whole work.</li>
+            </ol>
+        </ol>
+        <b>Thread Scheduling :-</b>
+        <ul>
+            <li>Preemptive Scheduling</li>
+            <li>Time-slice scheduling</li>
+        </ul>
+        <b>Methods of Thread class :-</b>
+        <ol>
+            <li><b>start() :-</b> It is used to start execution of thread. JVM invokes/calls run method on execution of start() method.</li>
+            <b>Syntex :-</b>public void start();
+            <li><b>run() :-</b> It is used to perform action for thread.</li>
+            <b>Syntex :-</b> public void run();
+            <li><b>getName() :-</b>It returns the name of thread.</li>
+            <b>Syntex :-</b>public final String getName();
+            <li><b>setName() :-</b> It changes the name of executing thread.</li>
+            <b>Syntex :-</b> public final void setName(String);
+            <li><b>getPriority() :-</b> It returns the priority of the thread.</li>
+            <b>Syntex :-</b>public final int getPriority();
+            <Ul>
+                <li>MIN_PRIORITY= 1</li>
+                <li>NORM_PRIORITY= 5</li>
+                <li>MAX_PRIORITY= 10</li>
+            </Ul>
+            <li><b>setPriority() :-</b> It is used to set the new priority for thread.</li>
+            <b>Syntex :-</b>public final void setPriority(int Priority);
+            <li><b>getId() :-</b>It returns the id of the thread.</li>
+            <b>Syntex :-</b>public int getId();
+            <li><b>currentThread() :-</b> It returns the reference of current executing thread.</li>
+            <b>Syntex :-</b>public static Thread currentThread();
+            <li><b>sleep() :-</b>It causes the currently running thread to sleep for specified period of time.</li>
+            <b>Syntex :-</b>public static void sleep(long milisecound);
+            <p>public static void sleep(long milisecound,int nanosecound);</p>
+            <li><b>join() :-</b>It waits for a thread to die.</li>
+            <b>Syntex :-</b>public void join ();
+            
+        </ol>
+        <ol>
+            <li>
+                <b>Write a program to explain the methods of thread class.</b>
+                <div class="program">
+                <pre>
+       //prog to explain the methods of thread class
+        class Demo extends Thread
+        {
+            public void run()
+            {
+                System.out.println("Hello Shubham,don't make noise");
+            }
+        }
+        class ExamThread
+        {
+            public static void main(String args[])
+           {
+                Demo v1=new Demo();
+                Demo v2=new Demo();
+                System.out.println(v1.getName());
+                System.out.println(v2.getName());
+                System.out.println(v1.getId());
+                System.out.println(v2.getId());
+                System.out.println(v1.getPriority());
+                System.out.println(v2.getPriority());
+                v1.start();
+                v2.start();
+                v1.setName("Vishwajeet Kumar Kushwaha");
+                System.out.println(v1.getName());
+                System.out.println(v2.getName());
+           }
+        }
+
+                </pre>
+                </div>
+            </li>
+            <li>
+                <b>Write a program to explain the example of current thread.</b>
+                <div class="program">
+                <pre>
+           //prog to explain the example of Current thread
+            class Vvishu extends Thread
+            {
+                public void run()
+                {
+                    System.out.println(Thread.currentThread().getName());
+                    System.out.println(Thread.currentThread().getPriority());
+                }
+            }
+            class CurrentThread
+            {
+                public static void main(String []vishu)
+                {
+                    Vvishu v=new Vvishu();
+                    v.start();
+                }
+            }
+                </pre>
+                </div>
+            </li>
+            <b>NOTE :-</b>Both sleep() and   join(), throus <b>InterruptedException</b>.
+            <li>
+                <b>Write a program to explain the example of sleep and join.</b>
+                <div class="program">
+                <pre>
+       //prog to explain the example of sleep and join.
+        class Demmo extends Thread
+        {
+            public void run()
+            {
+                for(int i=1;i<=5;++i)
+                {
+                    try
+                    {
+                        sleep(2000);
+                    }
+                    catch(InterruptedException e)
+                    {
+                        System.out.println(e);
+                    }
+                    System.out.println("I is"+i);
+                }
+            }
+        }
+        class ExmOfSleepJoin
+        {
+            public static void main(String []vishu)
+            {
+                Demmo d=new Demmo();
+                Demmo d1=new Demmo();
+                Demmo d2=new Demmo();
+                d.start();
+                try
+                {
+                    d.join();
+                }
+                catch(InterruptedException e)
+                {
+                    System.out.println(e);
+                }
+                d1.start();
+                d2.start();
+            }
+        }
+                </pre>
+            </div>
+            </li>
+        </ol>
+        <b>isAlive() :-</b>This function tests if the thread isAlive or not .It returns boolean value.
+        <b>Syntex :-</b>public boolean isAlive();
+        <ol>
+            <li>
+                <b>Write a program to explain the example of isAlive.</b>
+                <div class="program">
+                <pre>
+        //prog to explain the example of isAlive
+        class Demos extends Thread
+        {
+            public void run()
+            {
+                System.out.println(Thread.currentThread().getPriority());
+            }
+        }
+        class ExmIsAlive
+        {
+            public static void main(String []vishu)
+            {
+                Demos d1=new Demos();
+                Demos d2=new Demos();
+                d1.setPriority(Thread.MIN_PRIORITY);
+                d2.setPriority(Thread.MAX_PRIORITY);
+                d1.start();
+                d2.start();
+                System.out.println(d1.isAlive());
+            }
+        }
+                </pre>
+                </div>
+            </li>
+        </ol>
+        </div>
+    </body>
+</html>

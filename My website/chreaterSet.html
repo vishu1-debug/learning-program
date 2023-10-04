@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="headerjs.js"></script>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="Full">
+    <h1><center><u>Steps to learn a Language</u></center></h1>
+    <p><b><center>English : Alphabet/Letter > Words > Sentences > Paragraph > copy/Book.</center></b></p>
+    <p><b><center> हिन्द : अक्षर > शब्द > वाक्य > अनुच्छेद > किताब</center></b></p>
+    <p><b><center>JAVA : Character > Token > Statement/Instruction > Program > Software.</center></b></p>
+    <h1><center><b><u>Character Set of JAVA</u></b></center></h1>
+    <p>The valid / recognised set of character used in a particular language is called the character set of that language. Character set means that the character and symbols that a C/C++/JAVA Program can understand and accept. These are grouped to from the the commands, expression, words, statements and the token of Java language. </p>
+    <p>The character set of java can cantain maximum 2^16(65536) character, because java follows UNICODE.</p>
+    <p><b>There are following character used in the character set of 'JAVA' :-</b></p>
+        <ul style="margin-left:40px">
+            <li>Capital letters (A to Z)</li>
+            <li>Small leters (a to z)</li>
+            <li>Digit (0 to 9)</li>
+            <li>Special symbol :- All the keybord keys except alphabet, digits and white-spaces are the special symbols.</li>
+            <p>There are following special Symbol/special Character.</p>
+            <li>White space:-</li>
+            <p>One or more space is considered as white space.The compiler ignores white space unless they are a part of a string constant. White space are used to separate words but can't be embedded in the keywords and identifiers.</p>
+            <p  ><b>There are following white space character :-</b></p>
+            <ul style="margin-left:40px">
+                <li>Blank space - One character space</li>
+                <li>Horizonted tab ('\t') - Five or Eight character space</li>
+                <li>Vertical tab ('\v') - Five or Eight character space</li>
+                <li>Carriage return ('\r')</li>
+                <li>Line feed/New line('\n')</li>
+                <li>Form feed ('\f') - For big space</li>
+            </ul>
+            <p>It means any types of space is called white space.</p>
+        </ul>
+        <h2>Tokens</h2>
+        <p>The smallest meaninigful unit of a "JAVA" program is called token. In java tokens are considered as fundamental building block for a program. A java program is made up of several tokens. With the help of token a complete Java instruction / statement is prepared.</p>
+        <h3>A java program is made up of several following tokens :-</h3>
+        <ol>
+            <li>Keywords</li>
+            <p>Keywords are reserved words that are pre-define in java library. They can't be changed ar modified. They can only be used the users.There are total '50' keywords in java and like 'C & C++' keywords must be writen in small case letters. </p>
+            <h2>List of Java KeyWords</h2>
+            <ol>
+                <div class="divchar">
+                <div class="char">
+                    <li>abstract</li>
+                    <li>assert</li>
+                    <li>boolean</li>
+                    <li>break</li>
+                    <li>byte</li>
+                    <li>case</li>
+                    <li>catch</li>
+                    <li>class</li>
+                    <li>volatile</li>
+                    <li>super</li>
+                </div>
+                <div class="char">
+                    <li>throw</li>
+                    <li>void</li>
+                    <li>continue</li>
+                    <li>default</li>
+                    <li>do</li>
+                    <li>double</li>
+                    <li>else</li>
+                    <li>enum</li>
+                    <li>extend</li>
+                    <li>final</li>
+                 </div>
+                 <div class="char">
+                    <li>finally</li>
+                    <li>const</li>
+                    <li>switch</li>
+                    <li>throws</li>
+                    <li>while</li>
+                    <li>for</li>
+                    <li>goto</li>
+                    <li>if</li>
+                    <li>new</li>
+                    <li>package</li>
+                 </div>
+                 <div class="char">
+                    <li>private</li>
+                    <li>implements</li>
+                    <li>import</li>
+                    <li>instance of</li>
+                    <li>int</li>
+                    <li>interface</li>
+                    <li>long</li>
+                    <li>float</li>
+                    <li>synchronized</li>
+                    <li>transient</li>
+                 </div>
+                 <div class="char">
+                    <li>protected</li>
+                    <li>public</li>
+                    <li>return</li>
+                    <li>short</li>
+                    <li>static</li>
+                    <li>strictfp</li>
+                    <li>native</li>
+                    <li>this</li>
+                    <li>try</li>
+                 </div>
+            </div>
+            <p><strong>Note :-</strong> const and goto are reserved keywords, but not used. Reserved values defined by java are true, false, null but these are not keybords. These are literal values.</p>
+        </ol>
+        <li><strong>Identifiers</strong></li>
+        <p>Identifier  is the name of variable label, array, function, class, interface or any uses defined data item.</p>
+        <h3>There are certain rules regarding identifier :-</h3>
+        <ul>
+            <li>Identifier must be meaningful and unique.</li>
+            <li>It is the combination of alphabets / letters(capital as well as small), digits(0-9), underscore(_), and dollor sign($).</li>
+            <li>First characterof an identifier must be an alphabet or underscore(_) or dollar($) sign. It means digits can't be used as first character of an identifier.</li>
+            <li>No special symbol can be used except underscore (_) abd Dollar($).</li>
+            <li>white spaces are not allowed.</li>
+            <li>Pre-defined keywords, function or we can say pre-defined terms can't be used as a name / identifier.</li>
+            <li>With JDK-8, the use of an underscore by itself as an identifier is not recommended.</li>
+        </ul>
+        <li>Constants</li>
+        <p>Constants are the fixed values that do not change during execution of program. Constants are specified at the right of assignment operator.</p>
+        <h3>There are basically three types of constant.</h3>
+        <ol >
+            <li><Strong>Numeric constant :-</Strong></li>
+            <p>A constant that contain numbers ar works on numbers is called numeric constant.</p>
+            <h3>There are two types of numeric constent</h3>
+            <ol style="list-style-type: style type upper-roman;">
+                <li>Integer</li>
+                <p>A constant which has no fractional part is called integer constant. Any number value is an integer literal.</p>
+                <ol style="list-style-type:lower-alpha">
+                    <li>Decimal constant </li>
+                    <p>It contains digits from 0 to 9, with an optional leading +ve or -ve sign.</p>
+                    <p>Example:- +34, 124, -65 etc.</p>
+                    <li>Octal constent</li>
+                    <p>It contains digits from 0 to 7 and is preceeded/ leaded with Zero(0).</p>
+                    <p><strong>Example:-</strong> 033, 051, 0332, 0327, etc</p>
+                    <li>Hexa decimal constent</li>
+                    <p>It is Combination of digits from 0 to 9 and letters from A to F / a to f and preceeded with 0X(ZeroX).</p>
+                    <p><strong>Example :-</strong> 0X34, 0X34A, etc.</p>
+                    <li>Binary constent</li>
+                    <p>It contain bits 0,1 and leaded / preceeded with 0b / 0B (Zero b/B). Binary constant is added in JDK-7.</p>
+                    <p><strong>Example :-</strong> 0b1010, 0B01010, etc.</p>
+                </ol>
+            </ol>
+        </ol>
+        </ol> 
+</body>
+</html>

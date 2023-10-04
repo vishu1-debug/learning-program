@@ -1,0 +1,654 @@
+<html>
+    <title>Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="headerjs.js"></script>
+    <body>
+        <header id="header"></header>
+        <div class="Full">
+        <h1><u><center style="background-color: red;">INTERFACE</center></u></h1>
+    <P>The process of specitying/representing ful abstract form/generalise form is called interface. Interface is the way/form through which java represents the concept of fully abstract class.
+        <p>With the help of interface, java achieves multiple inheritance. In java, interface keyword is used to create an interface. We can specify instance variable and method/function prototype within interface as member.</p>
+        <p>The interface variable/data member of instance is by default public,static and final,while the method prototype within the interface is considered as abstract and public defaultly.</p>
+        <p><b>NOTE (1):-</b>An interface can be utilised/implementes try any number of calsses and a single class can also utilised/implement multiple (more than one) interfaces.</p>
+        <p><b>NOTE (2):-</b>In java, implements keyword is used to utilise/implement the interface.</p>
+        <b>Syntex to create an Interface :-</b>
+        <p>
+            <div class="program">
+            <pre><ul>
+        <li>interface interface-name
+            {
+                interface variable/field-1;
+                interface variable/field-2;
+                --------------------------;
+                --------------------------;
+                interface variable/field-n;
+                method prototype-1;
+                method prototype-2;
+                ------------------;
+                ------------------;
+                method prototype-n;
+            }
+        </li></ul></pre>
+        </div>
+        </P>
+    <p><b>NOTE :-</b>By default access-specifir for interface is public ,ehile the class is friendly/defaultiy.</p>
+    <b>Example :-</b>
+    <div class="program">
+        <pre><ol>
+        <li>
+            interface Demo
+            {
+                void display();
+                void show();
+            }
+        </li>
+        <li>
+            interface Example
+            {
+                float x=3.14f;
+                void display();
+                void getArea();
+            }
+        </li>
+    </ol></pre>
+    </div>
+<h1><center style="background-color: gray;"><u>IMPLEMENTING/UTILISING  AN INTERFACE</u></center></h1>
+<p>An interface can be utilised/implementes by one or more classes using implements keyword.The class who implements the interface must define the body of all abstract methods specified within interface. If a class performs partial utilisation of abstract method , themn that class must be declared as abstract otherwise compiler produce an error.</p>
+<p><b>NOTE :-</b>Like abstract class we can't create the object of an interface.However,we can create the reference of an interface.</p>
+<b>Syntex to implement an interface :-</b>
+<div class="program">
+<pre>
+    class ClassName implements interface-name
+    {
+        -----------------------
+        ------------------------
+        ------------------------
+    }
+<b>Example  :-</b>
+    class Xyz implements Demo
+    {
+        ---------------------
+        ---------------------
+        ---------------------
+    }
+    </pre>
+    </div>
+    <ol >
+        <li>
+           <b> Write a program to explain the example of interface.</b>
+           <div class="program">
+           <pre>
+        //prog to explain the example of interface.
+        interface Demo
+        {
+            void show();
+            void display();
+        }
+        class Vishu implements Demo
+        {
+            public void show()
+            {
+                System.out.println("Wellcome java");
+            }
+            public void display()
+            {
+                System.out.println("Bye Bye java");
+            }
+        }
+        class InterfaceDemo
+        {
+            public static void main(String []args)
+            {
+                Vishu v=new Vishu();
+                v.show();
+                v.display();
+            }
+        }
+        /* class InterfaceDemo
+            {
+                public static void main(String []args)
+                {
+                    Demo d;
+                    Vishu v=new Vishu();
+                    d=m;
+                    d.show();
+                    d.display();
+                }
+            }*/
+        /* class InterfaceDemo
+            {
+                public static void main(String []args)
+                {
+                    Demo d=new Vishu();
+                    d.show();
+                    d.display();
+                }
+            }*/
+        
+        </pre>
+            </div>
+        </li></ol>
+<b><u>Specifying main() function within that calss which implements an interface :-</u></b>
+<ol><li><b>Write a program to specifying main() function within that calss which implements an interface.</b>
+    <div class="program">
+    <pre>
+        interface Vishu
+        {
+            void show();
+            void display();
+        }
+        class SpecifyingMain implements Vishu
+        {
+            public void show()
+            {
+                System.out.println("Hello Google");
+            }
+            public void display()
+            {
+                System.out.println("Hello Friends");
+            }
+            public static void main(String []args)
+            {
+                SpecifyingMain v=new SpecifyingMain();
+                v.show();
+                v.display();
+            }
+        }
+    </pre>
+    </div></li>
+    <li><b>
+        Write a program to explain the example of interface specifying both instance variable.</b> 
+        <div class="program"> <pre>
+     //Example of implementing an interface by multiple classes.
+     interface Vish
+     {
+        float PIE=3.14f;
+        void getArea(int x,int y);
+     }
+     class Rectangle implements Vish
+     {
+        public void getArea(int l,int b)
+        {
+            System.out.println("Area of Rectangle is"+(l*b));
+        }
+    }
+    class Circle implements Vish
+    {
+        public void getArea(int r,int m)
+        {
+            System.out.println("Area of circle is"+(PIE*r*r));
+        }
+    }
+    class Implement
+    {
+        public static void main(String []args)
+        {
+            Vish v;
+            Rectangle rr=new Rectangle();
+            Circle cc=new Circle();
+            v=rr;
+            v.getArea(12,8);
+            v=cc;
+            v.getArea(5,7);
+        }
+    }
+        </pre>
+        </div>
+        <p><b>NOTE (related to above program) :-</b><ol><li>Data member/instance variable/field uithin interface must be initialised during declaration and eritten in capital letter, because is instance variable within interface is bydefault final,static and public, otherwise compiler produces an error.</li>
+        <li>The variable-name must be specified as argument in method prototype within interface, otherwise compiler produces an error.</li></ol></li></ol>
+
+<ol>
+    <p><b><u>Implementing an Interface by multiple classes:-</u></b>
+    In java,a single interface can be utiliase implemented by multiple (two or more) classes.
+    </p>
+    <ol>
+        <li><b>Write a program to implementing an interface by multipal claasses.</b>
+    <div class="program">
+    <pre>
+     //prog to implementing an interface by multiple classes.
+     interface Demoo
+     {
+        void show();
+        void display();
+     }
+     class Vishuu implements Demoo
+     {
+        public void show()
+        {
+            System.out.println("Hello world");
+        }
+        public void display()
+        {
+            System.out.println("Display World");
+         }
+     }
+     class Vvishu implements Demoo
+     {
+        public void show()
+        {
+            System.out.println("Hello friends");
+        }
+        public void display()
+        {
+            System.out.println("Hello India");
+        }
+     }   
+     class MultipalClasses
+     {
+        public static void main(String []args)
+        {
+            Demoo d;
+            Vishuu vv=new Vishuu();
+            Vvishu ii=new Vvishu();
+            d=vv;
+            d.show();
+            d.display();
+            d=ii;
+            d.show();
+            d.display();
+        }
+     }
+            </pre>
+        </div>
+        </li>
+    </ol>
+    <b><u>Implementing multiple interface in a single class :-</u></b>
+    <p>We can utilise/implement more than one interfaces by a single class by separating interfaces with comma(,).</p>
+    <b>Syntex :-</b>
+        <p><pre>
+        class class-name implements interface-1,interface-2,---,interface-n
+        {
+            ----------------
+            ----------------
+        }
+        </pre>
+    <ol>
+        <li>
+            <b>Write a program to implements interfaces in a single class.</b>
+            <div class="program">
+            <pre>
+         //prog to implement multiple interfaces in a single class.
+         interface Mno
+         {
+          void display();
+         }
+         interface Exam
+         {
+             void show();
+         }
+         class Kumar implements Mno,Exam
+         {
+            public void show()
+            {
+                System.out.println("Hello");
+            }
+            public void display()
+            {
+                System.out.println("Byee");
+            }
+        }
+        class SingleClass
+        {
+            public static void main(String []args)
+            {
+                Kumar k=new Kumar();
+                k.show();
+                k.display();
+            }
+        }
+            </pre>
+            </div>
+        </li>
+</ol>
+    <b><u>Inheriting an Interface :-</u></b>
+<p>
+    In java, we can inherit/derive the member of one interface into another interface.
+    <ol>
+        <li>
+            <b>Write a program to show the example of inheriting an interface using single inheritance hierarchy.</b>
+            <div class="program">
+            <pre>
+     //prog to show the example of inheriting an interface using single inheritance.
+        interface Demmo
+        {
+            void display();
+        }
+        interface Examp extends Demmo
+        {
+            void show();
+            void disp();
+        }
+        class Kumar implements Examp
+        {
+            public void show()
+            {
+                System.out.println("Hiiiii");
+            }
+            public void display()
+            {
+                System.out.println("See u");
+            }
+            public void disp()
+            {
+                System.out.println("Byee");
+            }
+        }
+        class Inheriting
+        {
+            public static void main(String []args)
+            {
+                Kumar k=new Kumar();
+                k.show();
+                k.display();
+                k.disp();
+            }
+        }
+
+            </pre>
+            </div>
+        </li>
+        <li>
+            <b>Write a program to inheriting an interface in another iterface using multi-leve hierarchy.</b>
+            <div class="program">
+            <pre>
+       //Inheriting an interface in another interface using multi-lavel hierarchy.
+        interface Demo
+        {
+            void display();
+        }
+        interface Vishu extends Demo
+        {
+            void show();
+        }
+        interface Kuumar extends Vishu
+        {
+            void disp();
+        }
+        class Kush implements Kuumar
+        {
+            public void show()
+            {
+                System.out.println("Hello");
+            }
+            public void display()
+            {
+                System.out.println("See u");
+            }
+            public void disp()
+            {
+                System.out.println("Byee");
+            }
+        }
+        class InheritingAnother
+        {
+            public static void main(String []args)
+            {
+                Kush k=new Kush();
+                k.show();
+                k.display();
+                k.disp();
+            }
+        }
+            </pre>
+            </div>
+        </li>
+        <li>
+            <b>Write a program to inheriting an interface with two ar more(multipale) interfaces.</b>
+            <div class="program">
+            <pre>
+        //Inheriting an interface with multipal inheritance using interface.
+        interface Xyz
+        {
+            void display();
+        }
+        interface Mnoo
+        {
+            void show();
+        }
+        interface Example extends Xyz,Mno
+        {
+            void disp();
+        }
+        class Abc implements Example
+        {
+            public void show()
+            {
+                System.out.println("Hello");
+            }
+            public void display()
+            {
+                System.out.println("See u");
+            }
+            public void disp()
+            {
+                System.out.println("Byee");
+            }
+        }
+        class MultipaleInheritance
+        {
+            public static void ain(String []args)
+            {
+                Abc a=new Abc();
+                a.show();
+                a.display();
+                a.disp();
+            }
+        }
+            </pre>
+            </div>
+            <p><b>Note :-</b>In java, the structure/format for multiple inheritance with class is not possible, but that structure is possible with interface.</p>
+        </li>
+        <li><b>Write a program to explan the example of inheriting an interface using hierachical inheritance.</b>
+            <div class="program">
+            <pre>
+        //Example of inheriting an interface using hierarehical inheritance.
+        interface Demmo
+        {
+            void display();
+        }
+        interface Examplee extends Demmo
+        {
+            void show();
+        }
+        interface Exampl extends Demmo
+        {
+            void disp();
+        }
+        class Pqr implements Exampl
+        {
+            public void display()
+            {
+                System.out.println("Hello");
+            }
+            public void disp()
+            {
+                System.out.println("Hiiii");
+            }
+        }
+        class Abcd implements Examplee
+        {
+            public void display()
+            {
+                System.out.println("Hello Byee");
+            }
+            public void show()
+            {
+                System.out.println("See u again");
+            }
+        }
+        class InterfaceINheritance
+        {
+            public static void main(String []args)
+            {
+                Pqr p=new Pqr();
+                p.display();
+                p.disp();
+                Abcd aa=new Abcd();
+                aa.display();
+                aa.show();
+            }
+        }
+        </pre>
+        <b><center  style="background-color: gray;">OR</center></b>
+        <pre>
+        interface Inheritting
+        {
+            void display();
+        }
+        interface Eexample extends Inheritting
+        {
+            void show();
+        }
+        interface Visshu extends Inheritting
+        {
+            void disp();
+        }
+        class Xxyz implements Eexample,Visshu
+        {
+            public void display()
+            {
+                System.out.println("Helllo");
+            }
+            public void disp()
+            {
+                System.out.println("welcome Google");
+            }
+            public void show()
+            {
+                System.out.println("welcome back");
+            }
+        }
+        class ExmInheriting
+        {
+            public static void main(String []args)
+            {
+                Xxyz d=new Xxyz();
+                d.display();
+                d.disp();
+                d.show();
+            }
+        }
+        </pre>
+        </div>
+</ol>
+</p>
+<b>Partial utilisation of abstract method of interface :-</b>
+<p>
+    As we know, a class utilises/implements all abstract method of an interface. But in java, it is also provision to utilise abstract method according to need for this, we have to proceed the class with abstract keyword which implement an interface.
+</p>
+<ol>
+    <li>
+        <b>Write a program to partial utilisation of abstract method of interface.</b>
+        <div class="program">
+        <pre>
+        //partial utilisation of abstract method of interface.
+        interface Ddemo
+        {
+            void display();
+            void show();
+            void disp();
+        }
+        abstract class Xayz implements Ddemo
+        {
+            public void display()
+            {
+                System.out.println("Hello Vishu");
+            }
+            public void show()
+            {
+                System.out.println("Hiii Vishu");
+            }
+        }
+        class AbstractMethod extends Xayz
+        {
+            public void disp()
+            {
+                System.out.println("Bye Bye Vishu");
+            }
+            public static void main(String []args)
+            {
+                AbstractMethod aa=new AbstractMethod();
+                aa.display();
+                aa.show();
+                aa.disp();
+            }
+        }
+        </pre>
+        <b><center style="background-color: gray;">OR</center></b>
+        <pre>
+        interface Hello
+        {
+            void display();
+            void show();
+            void disp();
+        }
+        abstract class Xyzz implements Hello
+        {
+            public void display()
+            {
+                System.out.println("Hello vishu");
+            }
+            public void show()
+            {
+                System.out.println("How are u");
+            }
+        }
+        class Mmno extends Xyzz
+        {
+            public void disp()
+            {
+                System.out.println("Bye Bye See You Again");
+            }
+        }
+        class AbstractMethod
+        {
+            public static void main(String []args)
+            {
+                Mmno m=new Mmno();
+                m.display();
+                m.show();
+                m.disp();
+            }
+        }
+        </pre>
+        </div>
+    </li>
+</ol>
+<p><b>Process :-</b>A running program is called process 'or', A program in exrcution is called process and a light weighted process is called thread.
+    <p><b>NOTE :-</b>A single program can have a single process or multipal process.
+<ul>
+    <div class="program">
+    <pre><li>
+    main()
+    {
+        ------One process
+    }
+    </li>
+    <li>
+    main()
+    {
+        sum();
+        product();
+        cube();
+    }
+    sum()
+    {
+    ------
+    }
+    product()
+    {
+    --------
+    }
+    cube()
+    {
+     ------
+    }
+    4 process, one main and 3 child processes.
+    </li>
+</pre>
+</div>
+</p>
+</p>
+</div>
+    </body>
+</html>
